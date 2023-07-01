@@ -24,10 +24,11 @@ def run_game():
     pygame.display.set_caption("Alien Invasion")
 
     # 创建飞船
-    ship = Ship(screen)
+    ship = Ship(ai_settings, screen)
 
     while True:
-        gf.check_events()
+        gf.check_events(ship)
+        ship.update()
         gf.update_screen(ai_settings, screen, ship)
 
 if __name__ == '__main__':
