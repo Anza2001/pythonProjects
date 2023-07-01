@@ -7,6 +7,7 @@
 
 import sys
 import pygame
+from pygame.sprite import Group
 import game_functions as gf
 
 from settings import Settings
@@ -25,11 +26,14 @@ def run_game():
 
     # 创建飞船
     ship = Ship(ai_settings, screen)
+    # 创建一个用于存储子弹的编组
+    bullets = Group()
 
     while True:
-        gf.check_events(ship)
+        gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
-        gf.update_screen(ai_settings, screen, ship)
+        bullets.update()
+        gf.update_screen(ai_settings, screen, ship, bullets)
 
 if __name__ == '__main__':
     run_game()
