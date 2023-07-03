@@ -13,9 +13,8 @@ class Ship():
         self.screen = screen
         self.ai_settings = ai_settings
 
-        self.ship_width = 55
-        self.ship_height = 65
-
+        self.ship_width = 70
+        self.ship_height = 70
         # 记载飞船图像并获取外接矩阵
         self.image = pygame.transform.scale(
             pygame.image.load('images/ship.png'),
