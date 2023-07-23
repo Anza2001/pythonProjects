@@ -1,1 +1,3 @@
-/python_projects/django_web/ll_env/
+ll_env/
+__pycache/
+*.sqlite3
